@@ -6,6 +6,7 @@
 
 
 import requests
+import time
 from requests_toolbelt import MultipartEncoder
 
 
@@ -41,6 +42,12 @@ class MMCClient(object):
             if d['name'] == name:
                 return d['id']
         return None
+
+    def get_deployment_by_id(self, deployment_id):
+        r = requests.get("%s/api/deployments/%s" % (self._url, deployment_id), auth=self._auth)
+        if r.status_code != requests.codes.ok:
+            raise Exception("Failed to get deployment [%s]. Server return %s.\n%s" % (deployment_id, r.status_code, r.text))
+        return r.json()
 
     def delete_deployment(self, name):
         deployment_id = self.get_deployment_id_by_name(name)
@@ -121,5 +128,14 @@ class MMCClient(object):
 
     def deploy_deployment_by_id(self, deployment_id):
         r = requests.post("%s/api/deployments/%s/deploy" % (self._url, deployment_id), auth=self._auth)
-        if r.status_code != requests.codes.ok and r.status_code != requests.codes.created:
+        if r.status_code != requests.codes.ok:
             raise Exception("Failed to deploy [%s]. Server return %s.\n%s" % (deployment_id, r.status_code, r.text))
+        status = "Unknown"
+        deployment = None
+        while status != "FAILED" and status != "DEPLOYED":
+            deployment = self.get_deployment_by_id(deployment_id)
+            status = deployment["status"]
+            time.sleep(5)
+        return status == "DEPLOYED", deployment
+
+
