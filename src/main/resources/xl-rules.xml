@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+
+    THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+    FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+
+-->
+<!--
+    Note: If you modify this file and automatic reloading is disabled in `planner.conf`, you must restart the XL Deploy server.
+-->
+<rules xmlns="http://www.xebialabs.com/xl-deploy/xl-rules">
+    <rule name="Mule.InstallApplicationToServerGroup" scope="deployed">
+        <conditions>
+            <type>mule.ApplicationModule</type>
+            <operation>CREATE</operation>
+            <operation>MODIFY</operation>
+        </conditions>
+        <steps>
+            <jython>
+                <description expression="true">"Deploy application %s to %s" % (deployed.applicationName, deployed.container.name)</description>
+                <script>mule/install_app.py</script>
+            </jython>
+        </steps>
+    </rule>
+
+    <rule name="Mule.UninstallApplicationToServerGroup" scope="deployed">
+        <conditions>
+            <type>mule.ApplicationModule</type>
+            <operation>DESTROY</operation>
+        </conditions>
+        <steps>
+            <jython>
+                <description expression="true">"Undeploy application %s from %s" % (previousDeployed.applicationName, previousDeployed.container.name)</description>
+                <script>mule/uninstall_app.py</script>
+            </jython>
+        </steps>
+    </rule>
+
+</rules>

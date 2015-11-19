@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS
+    FOR A PARTICULAR PURPOSE. THIS CODE AND INFORMATION ARE NOT SUPPORTED BY XEBIALABS.
+
+-->
+<synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.xebialabs.com/deployit/synthetic"
+           xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
+
+    <type type="mule.AppTarget" extends="udm.BaseContainer" virtual="true">
+        <property name="mmc" kind="ci" referenced-type="mule.MMCServer" as-containment="true"/>
+    </type>
+
+    <type type="mule.Cluster" extends="mule.AppTarget"/>
+    <type type="mule.ServerGroup" extends="mule.AppTarget"/>
+
+    <type type="mule.ApplicationModule" extends="udm.BaseDeployedArtifact" deployable-type="mule.Application" container-type="mule.AppTarget">
+        <generate-deployable type="mule.Application" extends="udm.BaseDeployableArchiveArtifact"/>
+        <property name="applicationName"/>
+    </type>
+
+</synthetic>

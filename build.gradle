@@ -1,0 +1,42 @@
+defaultTasks 'build'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "nl.javadude.gradle.plugins:license-gradle-plugin:0.11.0"
+    }
+}
+
+apply plugin: "com.github.hierynomus.license"
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'idea'
+
+group = 'com.xebialabs.deployit.community'
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+version = '5.1.0'
+def apiVersion = '2014.7.4'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        credentials {
+            username 'community-plugins'
+            password 'community'
+        }
+        url 'http://nexus.xebialabs.com/nexus/content/repositories/releases'
+    }
+}
+
+dependencies {
+    compile "com.xebialabs.deployit:udm-plugin-api:$apiVersion"
+}
+
+license {
+    header rootProject.file('src/main/license/xebialabs_community.license')
+    strictCheck true
+}
