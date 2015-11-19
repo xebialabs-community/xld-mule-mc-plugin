@@ -130,6 +130,8 @@ class MMCClient(object):
         r = requests.post("%s/api/deployments/%s/deploy" % (self._url, deployment_id), auth=self._auth)
         if r.status_code != requests.codes.ok:
             raise Exception("Failed to deploy [%s]. Server return %s.\n%s" % (deployment_id, r.status_code, r.text))
+
+    def wait_for_deployment(self, deployment_id):
         status = "Unknown"
         deployment = None
         while status != "FAILED" and status != "DEPLOYED":

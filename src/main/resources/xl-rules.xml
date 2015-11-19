@@ -21,6 +21,11 @@
                 <description expression="true">"Deploy application %s to %s" % (deployed.applicationName, deployed.container.name)</description>
                 <script>mule/install_app.py</script>
             </jython>
+            <checkpoint/>
+            <jython>
+                <description expression="true">"Check deployment status for %s" % (deployed.applicationName)</description>
+                <script>mule/check_app_status.py</script>
+            </jython>
         </steps>
     </rule>
 

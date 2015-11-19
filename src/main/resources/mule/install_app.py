@@ -5,7 +5,6 @@
 #
 
 from mule.mmc_client import MMCClient
-import sys
 
 client = MMCClient.create_client_from_deployed(deployed)
 
@@ -30,8 +29,5 @@ else:
     deployment_id = client.create_cluster_deployment(deployed.container.name, deployment_name, application_version_id)
 
 print "Deployment prepared. Will execute deployment."
-success, deployment = client.deploy_deployment_by_id(deployment_id)
-if not success:
-    print "Deployment [%s] failed. No additional information available.\nSee %s" % (deployment_name, deployment["href"])
-    sys.exit(1)
+client.deploy_deployment_by_id(deployment_id)
 print "Done."
