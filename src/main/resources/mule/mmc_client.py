@@ -131,6 +131,11 @@ class MMCClient(object):
         if r.status_code != requests.codes.ok:
             raise Exception("Failed to deploy [%s]. Server return %s.\n%s" % (deployment_id, r.status_code, r.text))
 
+    def redeploy_deployment_by_id(self, deployment_id):
+        r = requests.post("%s/api/deployments/%s/redeploy" % (self._url, deployment_id), auth=self._auth)
+        if r.status_code != requests.codes.ok:
+            raise Exception("Failed to redeploy [%s]. Server return %s.\n%s" % (deployment_id, r.status_code, r.text))
+
     def wait_for_deployment(self, deployment_id):
         status = "Unknown"
         deployment = None

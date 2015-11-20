@@ -17,6 +17,11 @@
     <type type="mule.Cluster" extends="mule.AppTarget"/>
     <type type="mule.ServerGroup" extends="mule.AppTarget"/>
 
+
+    <type type="mule.DeployedConfigFile" extends="file.DeployedArtifactOnHost" deployable-type="mule.ConfigFile" container-type="overthere.Host">
+        <generate-deployable type="mule.ConfigFile" extends="file.File"/>
+    </type>
+
     <type type="mule.ApplicationModule" extends="udm.BaseDeployedArtifact" deployable-type="mule.Application" container-type="mule.AppTarget">
         <generate-deployable type="mule.Application" extends="udm.BaseDeployableArchiveArtifact"/>
         <property name="applicationName"/>

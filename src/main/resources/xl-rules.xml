@@ -10,6 +10,11 @@
     Note: If you modify this file and automatic reloading is disabled in `planner.conf`, you must restart the XL Deploy server.
 -->
 <rules xmlns="http://www.xebialabs.com/xl-deploy/xl-rules">
+
+    <rule name="Mule.RedeployApplicationOnConfigFileChange" scope="plan">
+        <planning-script-path>mule/redeploy-app-planning-rule.py</planning-script-path>
+    </rule>
+
     <rule name="Mule.InstallApplicationToServerGroup" scope="deployed">
         <conditions>
             <type>mule.ApplicationModule</type>
