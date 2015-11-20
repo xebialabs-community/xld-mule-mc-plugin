@@ -17,7 +17,7 @@ apply plugin: 'idea'
 group = 'com.xebialabs.deployit.community'
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
-version = '5.1.0-rc3'
+version = '5.1.0-rc4'
 def apiVersion = '2014.7.4'
 
 repositories {
