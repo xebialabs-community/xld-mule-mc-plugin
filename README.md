@@ -4,7 +4,7 @@ This document describes the functionality provided by the Mule Management Consol
 
 # Overview #
 
-The Mule Management Console plugin is an XL Deploy plugin that uses the [MMC Rest Api](https://docs.mulesoft.com/mule-management-console/v/3.7/rest-api-reference) to perform application deployments to [Mule](https://www.mulesoft.com/platform/mule)
+The Mule Management Console plugin is an XL Deploy plugin that uses the Mulesoft [MMC Rest Api](https://docs.mulesoft.com/mule-management-console/v/3.7/rest-api-reference) to perform application deployments to [Mule](https://www.mulesoft.com/platform/mule)
 
 # Features #
 
