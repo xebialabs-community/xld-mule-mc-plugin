@@ -2,6 +2,9 @@
  
 This document describes the functionality provided by the Mule Management Console Plugin.
 
+[![Build Status](https://travis-ci.org/xebialabs-community/xld-mule-mc-plugin.svg?branch=master)](https://travis-ci.org/xebialabs-community/xld-mule-mc-plugin)
+
+
 # Overview #
 
 The Mule Management Console plugin is an XL Deploy plugin that uses the Mulesoft [MMC Rest Api](https://docs.mulesoft.com/mule-management-console/v/3.7/rest-api-reference) to perform application deployments to [Mule](https://www.mulesoft.com/platform/mule)
@@ -27,6 +30,11 @@ The Mule Management Console plugin is an XL Deploy plugin that uses the Mulesoft
 Plugin can be downloaded directly from the plugin's repository on [Github](https://github.com/xebialabs-community/xld-mule-mc-plugin/releases).
 
 Place the plugin jar file into __&lt;xld-home&gt;/plugins__ directory.
+
+## Compilation ##
+
+When you want to develop / test / ... you can use a docker container available at:
+[docker-mule](https://github.com/jdewinne/docker-mule)
 
 # Setting up MMC server groups and clusters #
 
