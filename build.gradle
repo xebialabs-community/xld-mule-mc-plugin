@@ -29,12 +29,17 @@ repositories {
 }
 
 dependencies {
-    distBundle 'org.apache.httpcomponents:httpmime:4.4.1'
+    distBundle('org.apache.httpcomponents:httpmime:4.4.1') {
+        exclude module: 'httpclient'
+        exclude module: 'httpcore'
+        exclude module: 'commons-logging'
+        exclude module: 'commons-codec'
+    }
+
     compile "com.xebialabs.deployit:udm-plugin-api:$apiVersion"
 }
 
 license {
     header rootProject.file('src/main/license/xebialabs_community.license')
     strictCheck true
-    excludes(["**/requests/**/*.*","**/requests_toolbelt/**/*.*"])
 }
