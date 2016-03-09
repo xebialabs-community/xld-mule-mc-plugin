@@ -29,7 +29,7 @@ The Mule Management Console plugin is an XL Deploy plugin that uses the Mulesoft
 
 Plugin can be downloaded directly from the plugin's repository on [Github](https://github.com/xebialabs-community/xld-mule-mc-plugin/releases).
 
-Place the plugin jar file into __&lt;xld-home&gt;/plugins__ directory.
+Place the plugin xldp file into __&lt;xld-home&gt;/plugins__ directory.
 
 ## Compilation ##
 
