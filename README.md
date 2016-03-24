@@ -2,7 +2,18 @@
  
 This document describes the functionality provided by the Mule Management Console Plugin.
 
-[![Build Status](https://travis-ci.org/xebialabs-community/xld-mule-mc-plugin.svg?branch=master)](https://travis-ci.org/xebialabs-community/xld-mule-mc-plugin)
+# CI status #
+
+[![Build Status][xld-mule-mc-travis-image] ][xld-mule-mc-travis-url]
+[![Codacy Badge][xld-mule-mc-codacy-image] ][xld-mule-mc-codacy-url]
+[![Code Climate][xld-mule-mc-code-climate-image] ][xld-mule-mc-code-climate-url]
+
+[xld-mule-mc-travis-image]: https://travis-ci.org/xebialabs-community/xld-mule-mc-plugin.svg?branch=master
+[xld-mule-mc-travis-url]: https://travis-ci.org/xebialabs-community/xld-mule-mc-plugin
+[xld-mule-mc-codacy-image]: https://api.codacy.com/project/badge/grade/e0498b0b3deb4fb3941b954454f46c08
+[xld-mule-mc-codacy-url]: https://www.codacy.com/app/joris-dewinne/xld-mule-mc-plugin
+[xld-mule-mc-code-climate-image]: https://codeclimate.com/github/xebialabs-community/xld-mule-mc-plugin/badges/gpa.svg
+[xld-mule-mc-code-climate-url]: https://codeclimate.com/github/xebialabs-community/xld-mule-mc-plugin
 
 
 # Overview #

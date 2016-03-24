@@ -1,2 +1,16 @@
 language: java
 sudo: false
+notifications:
+  hipchat:
+    rooms:
+      secure: t4vQ1e43o51omvfA+9o1wnL+tYD0hnxqLRHFhNikEj6EkaMH1vD85lpy05vx5HtiA6DAJzScb4ahGB+LAHZIBSuWBJMFglZsmy0wukdfLpPOZ7RP2OAzSVsYZ5A1PIDf0yrzBtJKAKQVw8VX8Yq5TS7o7bDHSdEYuwCrfi40p1wTA2LQ/xpimPCHelX3Flblsdd59xPFZFY92hFh0BHOgxrKf00awCHA4s3GtKx7OLMNt5wn2lpNw7yzMtx14w2RCiGQOP7Mc6ZGX08+1G/ZVVrpup4HMp/x6Z7KzNBIwcEyHIOBMfrzm2ty0/0bQkyHpaN9gij/GuQT+xhapKq77mNoWzBMJldRFatnMxT9vuf0ZebGsPVq/TQETjDpfhhzgAQikZMBCAzCnX2qbeDKG9Gl/tvrdND/t/3y+jxG/LmLCv/yZ4wpGGh/eUA2sjKDIdu7etL+Uxt0o1ykTZUpzLzOUd8Ji6dXAKXloPhl7rTPlorSF/g1zO782kCzFcCb9UCnVA+Leh/kMa9ET/pQiM158ma+V5xyVdG8msmTCMvRofKBsjCM6hIDL5GN6jh4zVb9WU8335cLhKkIkQ0M6pE+0lGmJzZEPfG6MU3EvU5i2DAZo9a5mGY+e61JvSrOvIUhMCAVvmcHQ8f3LLPafqcKJLAlDZhWR7WIc6DASzY=
+deploy:
+  provider: releases
+  api_key:
+    secure: Lafsu4TBmpEG0R0uyQVFsfsKEJNv5XuZYyz0Ca4YNmiw19/RXkwRhAQeI6I1qIYFbzPE0y7YzDit15XTBA9i+OPGQWV2Kc0gHOwazB5jVUFWwTJpiPeed3pFEcvTuIvJfIBS18Ftt1BLmjL+GNHIdtAxySke/iuc9y6M3+2at7uA3rtCTBTiT9c8fr+R1rbSAxek26dVAHXDntz1TOMQa+sIGFcH0KDON5dCV+A5IU6llVKSUi0d+7Nx90iPPp9U+gIkvm7yKLzznLuVHdtp17Grs19DIqQUIU4kpTAp/A+KDdsxw+GoSncmMxhb7FUvOdw5c3aIXUtwokDF7uPnbmf/KtmJi747OMZFuPHsrAaHtBqx5EoZSQStbHk/N9Ocm3XoKn6wBHyy7k/jKe+xsDTToHadSzBSGK439qERYhU312L6OWNqgVscZQreZw/vNbmyeERKD4+SLxCmO+P99R+3//8Vac0SCQZY/eni6UveGxV1KA8vbwk8wpjMtY0WmDg838lpr0B1vujymazOmzfk6B44Q3IvZCPcxO587PNqDQV/qUXh9YgG/AVZ2tpJdxUql+OdioHUsa1ZkcqjyMu/3e+9NCWfNVLvBC0bYF/ILIOtBmmkxWBx9LVNQJqJvbgwhNsyUfeSx9SsMxNKLVirQNLuRAmicF3V/tdJSxo=
+  file: build/distributions/xld-mule-mc-plugin-5.1.0-rc6.xldp
+  skip_cleanup: true
+  on:
+    all_branches: true
+    tags: true
+    repo: xebialabs-community/xld-mule-mc-plugin

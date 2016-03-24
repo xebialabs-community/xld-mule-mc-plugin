@@ -23,11 +23,13 @@
         </conditions>
         <steps>
             <jython>
+                <order>60</order>
                 <description expression="true">"Deploy application %s to %s" % (deployed.applicationName, deployed.container.name)</description>
                 <script>mule/install_app.py</script>
             </jython>
             <checkpoint/>
             <jython>
+                <order>61</order>
                 <description expression="true">"Check deployment status for %s" % (deployed.applicationName)</description>
                 <script>mule/check_app_status.py</script>
             </jython>
@@ -38,9 +40,11 @@
         <conditions>
             <type>mule.ApplicationModule</type>
             <operation>DESTROY</operation>
+            <operation>MODIFY</operation>
         </conditions>
         <steps>
             <jython>
+                <order>40</order>
                 <description expression="true">"Undeploy application %s from %s" % (previousDeployed.applicationName, previousDeployed.container.name)</description>
                 <script>mule/uninstall_app.py</script>
             </jython>
